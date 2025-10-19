@@ -1,0 +1,27 @@
+# CMake build directories
+build/
+cmake-build-debug/
+out/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# IDE-specific files
+.vs/
+.idea/
+*.user
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+
+# CMake User Presets
+CMakeUserPresets.json
+
+# Temporary and log files
+*.log
+*.tmp
+

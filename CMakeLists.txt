@@ -6,19 +6,22 @@ project(Simple-DDS VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- Subdirectories ---
-# Add the source and test directories to the build
-add_subdirectory(src)
-add_subdirectory(tests)
+# 1. Enable testing for the whole project first.
+enable_testing()
 
-# --- Dependencies ---
-# Fetch Google Test for our unit testing framework
+# 2. Fetch dependencies so they are available for all subdirectories.
 include(FetchContent)
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
 )
+# This command makes gtest targets and the GoogleTest module available globally.
 FetchContent_MakeAvailable(googletest)
+  
+  
+# 3. Now that dependencies are ready, add the subdirectories that use them.
+add_subdirectory(src)
+add_subdirectory(tests)
 
-# Enable testing
-enable_testing()
+
+
