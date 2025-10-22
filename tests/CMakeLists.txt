@@ -1,19 +1,13 @@
-# Define the test executable
+# Add an executable for the tests
 add_executable(dds_tests
     participant_factory_test.cpp
+    participant_test.cpp # Add the new test file here
 )
 
-# Link the test executable against our library and Google Test
-target_link_libraries(dds_tests PRIVATE
-    dds_core
-    gtest_main
-)
+# Link the test executable against the core DDS library and Google Test
+target_link_libraries(dds_tests PRIVATE dds_core GTest::gtest_main)
 
-# Include the Google Test headers
-target_include_directories(dds_tests PRIVATE
-  "${googletest_SOURCE_DIR}/googletest/include"
-)
-
-# Add the test to CTest
+# Discover and add tests to CTest
 include(GoogleTest)
 gtest_add_tests(TARGET dds_tests)
+

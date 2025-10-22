@@ -2,6 +2,9 @@
 add_library(dds_core
     DomainParticipant.cpp
     DomainParticipantFactory.cpp
+    Publisher.cpp
+    Subscriber.cpp  
+    Topic.cpp       
 )
 
 # Specify the public include directory for the library

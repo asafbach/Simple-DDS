@@ -1,7 +1,7 @@
 #pragma once
 
 #include <dds/core/DomainParticipant.hpp>
-#include <dds/core/types.hpp>
+#include <dds/core/Types.hpp>
 #include <memory>
 #include <mutex>
 #include <map>
