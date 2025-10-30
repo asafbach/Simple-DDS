@@ -4,10 +4,9 @@ add_library(dds_core
     DomainParticipantFactory.cpp
     Publisher.cpp
     Subscriber.cpp  
-    Topic.cpp       
+    Topic.cpp 
+    qos/QosProfiles.cpp      
 )
 
 # Specify the public include directory for the library
-target_include_directories(dds_core PUBLIC
-    "${PROJECT_SOURCE_DIR}/include"
-)
+target_include_directories(dds_core PUBLIC "${PROJECT_SOURCE_DIR}/include")

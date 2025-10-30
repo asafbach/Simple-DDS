@@ -1,7 +1,9 @@
 #pragma once
 
 #include <dds/core/Entity.hpp>
+#include <dds/core/qos/QosProfiles.hpp>
 #include <memory>
+#include <mutex>
 
 namespace dds {
 namespace core {
@@ -20,9 +22,14 @@ public:
     
     std::shared_ptr<DomainParticipant> get_participant() const;
 
+    SubscriberQos get_qos() const;
+    bool set_qos(const SubscriberQos& qos);
+
 private:
-    explicit Subscriber(std::shared_ptr<DomainParticipant> participant);
+    explicit Subscriber(std::shared_ptr<DomainParticipant> participant, const SubscriberQos& qos);
     std::weak_ptr<DomainParticipant> participant_;
+    SubscriberQos qos_;
+    mutable std::mutex mtx_;
 };
 
 } // namespace core

@@ -3,18 +3,19 @@
 namespace dds {
 namespace core {
 
-///
-/// @class Entity
-/// @brief The abstract base class for all DDS objects that support QoS,
-/// listeners, and status conditions.
-///
+// Forward declare QoS profiles
+// struct DomainParticipantQos;
+// struct PublisherQos;
+// struct SubscriberQos;
+// struct TopicQos;
+// struct DataWriterQos; 
+// struct DataReaderQos; 
+
 class Entity {
 public:
-    /// @brief Virtual destructor.
+
     virtual ~Entity() = default;
 
-    /// @brief Enables the entity.
-    /// Entity objects can be created disabled and enabled later.
     virtual void enable() = 0;
 
 protected:

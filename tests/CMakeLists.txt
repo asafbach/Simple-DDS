@@ -1,7 +1,8 @@
 # Add an executable for the tests
 add_executable(dds_tests
     participant_factory_test.cpp
-    participant_test.cpp # Add the new test file here
+    participant_test.cpp 
+    qos_test.cpp
 )
 
 # Link the test executable against the core DDS library and Google Test
